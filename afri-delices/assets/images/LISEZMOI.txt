@@ -1,0 +1,26 @@
+IMAGES À AJOUTER DANS CE DOSSIER (format WebP recommandé, ou JPG)
+-----------------------------------------------------------------
+Utilisez vos propres photos ou des photos libres de droits dont vous
+avez vérifié la licence. Gardez EXACTEMENT ces noms (minuscules, sans
+espace ni accent), sinon la page n'affichera pas l'image.
+
+Bannière d'accueil
+  hero-plat.webp                 1200 x 900 px   (grand plat appétissant)
+
+Cartes de recettes (format 4:3)
+  fufu-sauce-graine.webp         800 x 600 px
+  attieke-poisson.webp           800 x 600 px
+  thieboudienne.webp             800 x 600 px
+  riz-au-gras.webp               800 x 600 px
+  pate-sauce-arachide.webp       800 x 600 px
+
+Miniatures de vidéos (format 16:10)
+  miniature-sauce-graine.webp        640 x 400 px
+  miniature-attieke-poisson.webp     640 x 400 px
+  miniature-thieboudienne.webp       640 x 400 px
+
+Bloc « À propos »
+  chef.webp                      600 x 800 px    (portrait, format 3:4)
+
+Tant qu'une image est absente, la page affiche un dégradé chaud à sa place
+(pas d'icône cassée). Pensez à alléger les images (moins de 200 Ko chacune).

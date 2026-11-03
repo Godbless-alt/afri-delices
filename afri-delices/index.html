@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AfriDélices – Recettes et cuisines d'Afrique</title>
+  <meta name="description" content="AfriDélices : découvrez des recettes africaines authentiques (Togo, Côte d'Ivoire, Sénégal, Bénin, Mali...) avec étapes détaillées et vidéos de démonstration.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317622c'/%3E%3Ctext x='32' y='43' font-size='34' text-anchor='middle' fill='%23f5b800' font-family='Arial' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Icônes réutilisables (sprite SVG) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-recherche" viewBox="0 0 24 24"><path d="M10 2a8 8 0 1 0 4.9 14.3l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+    <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M5.7 4.3 12 10.6l6.3-6.3 1.4 1.4-6.3 6.3 6.3 6.3-1.4 1.4-6.3-6.3-6.3 6.3-1.4-1.4 6.3-6.3-6.3-6.3z"/></symbol>
+    <symbol id="i-maison" viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></symbol>
+    <symbol id="i-horloge" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 3v6l5 3 1-1.7-4-2.3V7z"/></symbol>
+    <symbol id="i-toque" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.2 2.9A4.5 4.5 0 0 0 5 13v1h14v-1a4.5 4.5 0 0 0-2.8-8.1A4.5 4.5 0 0 0 12 2zM6 16v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4z"/></symbol>
+    <symbol id="i-lecture" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+    <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></symbol>
+    <symbol id="i-feuille" viewBox="0 0 24 24"><path d="M20 3C9 3 4 9 4 15c0 1.4.3 2.6.8 3.6C3.6 19.9 3 21 3 21h2.2c.4-.6 1-1.4 2-2 .9.3 1.8.4 2.8.4 6 0 11-5 10-16.4zM8 16c3-5 6-7 9-8-3 2-5 5-6 9z"/></symbol>
+  </svg>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- ========== EN-TÊTE ========== -->
+  <header class="entete">
+    <div class="conteneur entete-interieur">
+      <a class="logo" href="index.html" aria-label="AfriDélices, retour à l'accueil">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 6c-4 0-7.300 2.200-8.800 5.400A10 10 0 0 0 16 29v3h32v-3a10 10 0 0 0-7.200-17.600C39.300 8.200 36 6 32 6z" fill="#17622c"/>
+          <rect x="17" y="34" width="30" height="6" rx="2" fill="#17622c"/>
+          <circle cx="32" cy="50" r="9" fill="#f5b800" stroke="#17622c" stroke-width="3"/>
+          <path d="M32 44v6l4 2" stroke="#17622c" stroke-width="2.500" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-texte">
+          <span class="logo-nom">Afri<span>Délices</span></span>
+          <span class="logo-signature">Le goût de l'Afrique dans votre cuisine !</span>
+        </span>
+      </a>
+
+      <button class="bouton-menu" id="bouton-menu" type="button" aria-expanded="false" aria-controls="zone-menu" aria-label="Ouvrir le menu">
+        <svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <div class="zone-menu" id="zone-menu">
+        <nav class="nav-principale" aria-label="Navigation principale">
+          <ul>
+            <li><a href="index.html" aria-current="page"><svg class="icone" aria-hidden="true"><use href="#i-maison"/></svg>Accueil</a></li>
+            <li><a href="recettes.html">Recettes</a></li>
+            <li><a href="videos.html">Vidéos</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <form class="recherche" action="recettes.html" method="get" role="search">
+          <label class="sr-only" for="recherche-entete" style="position:absolute;left:-999px">Rechercher une recette</label>
+          <input id="recherche-entete" type="search" name="q" placeholder="Rechercher...">
+          <button type="submit" aria-label="Lancer la recherche"><svg class="icone" aria-hidden="true"><use href="#i-recherche"/></svg></button>
+        </form>
+
+        <a class="bouton bouton-vert" href="recettes.html">Explorer</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ========== BANNIÈRE ========== -->
+    <section class="banniere" aria-labelledby="titre-banniere">
+      <div class="conteneur banniere-grille">
+        <div>
+          <h1 id="titre-banniere">Découvrez les meilleures recettes <em>africaines</em> !</h1>
+          <p>Des plats savoureux, faciles à préparer, venus de toute l'Afrique : Togo, Côte d'Ivoire, Sénégal, Bénin et bien plus encore...</p>
+          <div class="banniere-actions">
+            <a class="bouton bouton-or" href="recettes.html"><svg class="icone" aria-hidden="true"><use href="#i-toque"/></svg>Explorer les recettes <svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+            <a class="bouton bouton-contour-clair" href="videos.html"><svg class="icone" aria-hidden="true"><use href="#i-lecture"/></svg>Voir les vidéos</a>
+          </div>
+        </div>
+        <div class="media banniere-image">
+          <img src="assets/images/hero-plat.webp" alt="Plat africain : riz, plantains frits et viande en sauce sur un tissu coloré" width="1200" height="900" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PAR PAYS ========== -->
+    <section class="section conteneur" aria-labelledby="titre-pays">
+      <div class="titre-section">
+        <h2 id="titre-pays">Nos cuisines africaines</h2>
+        <p>Choisissez un pays pour voir ses recettes</p>
+      </div>
+      <div class="grille-pays">
+        <a class="carte-pays" href="recettes.html?pays=togo"><span class="drapeau d-tg" aria-hidden="true"></span>Togo</a>
+        <a class="carte-pays" href="recettes.html?pays=cote-d-ivoire"><span class="drapeau d-ci" aria-hidden="true"></span>Côte d'Ivoire</a>
+        <a class="carte-pays" href="recettes.html?pays=senegal"><span class="drapeau d-sn" aria-hidden="true"></span>Sénégal</a>
+        <a class="carte-pays" href="recettes.html?pays=benin"><span class="drapeau d-bj" aria-hidden="true"></span>Bénin</a>
+        <a class="carte-pays" href="recettes.html?pays=mali"><span class="drapeau d-ml" aria-hidden="true"></span>Mali</a>
+        <a class="carte-pays" href="recettes.html?pays=cameroun"><span class="drapeau d-cm" aria-hidden="true"></span>Cameroun</a>
+        <a class="carte-pays" href="recettes.html?pays=ghana"><span class="drapeau d-gh" aria-hidden="true"></span>Ghana</a>
+        <a class="carte-pays" href="recettes.html?pays=nigeria"><span class="drapeau d-ng" aria-hidden="true"></span>Nigéria</a>
+      </div>
+    </section>
+
+    <!-- ========== RECETTES POPULAIRES ========== -->
+    <section class="section conteneur" aria-labelledby="titre-populaires">
+      <div class="titre-section">
+        <h2 id="titre-populaires">Nos recettes populaires</h2>
+        <p>Une sélection de plats à essayer chez vous</p>
+      </div>
+      <div class="entete-liste" style="justify-content:flex-end">
+        <a class="bouton bouton-contour" href="recettes.html">Voir toutes les recettes <svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+      </div>
+
+      <div class="grille-recettes">
+        <!-- Fiche détaillée : à créer dans recette/ (voir étape suivante) ; en attendant, le lien mène au catalogue -->
+        <a class="carte-recette" href="recettes.html?q=fufu">
+          <div class="media">
+            <span class="badge-pays"><span class="drapeau d-tg" aria-hidden="true"></span>Togo</span>
+            <img src="assets/images/fufu-sauce-graine.webp" alt="Fufu servi avec une sauce graine" width="800" height="600" loading="lazy">
+          </div>
+          <div class="carte-corps">
+            <h3>Fufu et sauce graine</h3>
+            <div class="carte-infos">
+              <span><svg class="icone" aria-hidden="true"><use href="#i-horloge"/></svg>45 min</span>
+              <span><svg class="icone" aria-hidden="true"><use href="#i-toque"/></svg>Facile</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="carte-recette" href="recettes.html?q=attieke">
+          <div class="media">
+            <span class="badge-pays"><span class="drapeau d-ci" aria-hidden="true"></span>Côte d'Ivoire</span>
+            <img src="assets/images/attieke-poisson.webp" alt="Attiéké accompagné de poisson braisé" width="800" height="600" loading="lazy">
+          </div>
+          <div class="carte-corps">
+            <h3>Attiéké poisson</h3>
+            <div class="carte-infos">
+              <span><svg class="icone" aria-hidden="true"><use href="#i-horloge"/></svg>30 min</span>
+              <span><svg class="icone" aria-hidden="true"><use href="#i-toque"/></svg>Facile</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="carte-recette" href="recettes.html?q=thieboudienne">
+          <div class="media">
+            <span class="badge-pays"><span class="drapeau d-sn" aria-hidden="true"></span>Sénégal</span>
+            <img src="assets/images/thieboudienne.webp" alt="Thiéboudienne : riz au poisson et aux légumes" width="800" height="600" loading="lazy">
+          </div>
+          <div class="carte-corps">
+            <h3>Thiéboudienne</h3>
+            <div class="carte-infos">
+              <span><svg class="icone" aria-hidden="true"><use href="#i-horloge"/></svg>1 h</span>
+              <span><svg class="icone" aria-hidden="true"><use href="#i-toque"/></svg>Moyen</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="carte-recette" href="recettes.html?q=riz+au+gras">
+          <div class="media">
+            <span class="badge-pays"><span class="drapeau d-ml" aria-hidden="true"></span>Mali</span>
+            <img src="assets/images/riz-au-gras.webp" alt="Riz au gras avec de la viande" width="800" height="600" loading="lazy">
+          </div>
+          <div class="carte-corps">
+            <h3>Riz au gras</h3>
+            <div class="carte-infos">
+              <span><svg class="icone" aria-hidden="true"><use href="#i-horloge"/></svg>50 min</span>
+              <span><svg class="icone" aria-hidden="true"><use href="#i-toque"/></svg>Moyen</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="carte-recette" href="recettes.html?q=arachide">
+          <div class="media">
+            <span class="badge-pays"><span class="drapeau d-tg" aria-hidden="true"></span>Togo</span>
+            <img src="assets/images/pate-sauce-arachide.webp" alt="Pâte servie avec une sauce d'arachide" width="800" height="600" loading="lazy">
+          </div>
+          <div class="carte-corps">
+            <h3>Pâte et sauce d'arachide</h3>
+            <div class="carte-infos">
+              <span><svg class="icone" aria-hidden="true"><use href="#i-horloge"/></svg>40 min</span>
+              <span><svg class="icone" aria-hidden="true"><use href="#i-toque"/></svg>Facile</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== VIDÉOS ========== -->
+    <section class="section conteneur" aria-labelledby="titre-videos">
+      <div class="panneau-videos">
+        <div class="entete-liste">
+          <div>
+            <h2 id="titre-videos"><span class="pastille"><svg class="icone" aria-hidden="true"><use href="#i-lecture"/></svg></span>Vidéos de démonstration</h2>
+            <p class="sous-titre">Apprenez en vidéo, pas à pas !</p>
+          </div>
+          <a class="bouton bouton-contour-clair" href="videos.html">Voir plus de vidéos <svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+        </div>
+
+        <!-- Les vraies vidéos (liens YouTube/TikTok vérifiés) seront ajoutées sur videos.html -->
+        <div class="grille-videos">
+          <a class="carte-video" href="videos.html">
+            <div class="media">
+              <span class="bouton-lecture"><svg class="icone" aria-hidden="true"><use href="#i-lecture"/></svg></span>
+              <img src="assets/images/miniature-sauce-graine.webp" alt="Miniature de la vidéo : préparer une sauce graine" width="640" height="400" loading="lazy">
+            </div>
+            <h3>Comment préparer une sauce graine ?</h3>
+          </a>
+          <a class="carte-video" href="videos.html">
+            <div class="media">
+              <span class="bouton-lecture"><svg class="icone" aria-hidden="true"><use href="#i-lecture"/></svg></span>
+              <img src="assets/images/miniature-attieke-poisson.webp" alt="Miniature de la vidéo : attiéké poisson" width="640" height="400" loading="lazy">
+            </div>
+            <h3>Attiéké poisson : recette facile et rapide</h3>
+          </a>
+          <a class="carte-video" href="videos.html">
+            <div class="media">
+              <span class="bouton-lecture"><svg class="icone" aria-hidden="true"><use href="#i-lecture"/></svg></span>
+              <img src="assets/images/miniature-thieboudienne.webp" alt="Miniature de la vidéo : thiéboudienne pas à pas" width="640" height="400" loading="lazy">
+            </div>
+            <h3>Thiéboudienne : pas à pas</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== À PROPOS ========== -->
+    <section class="section conteneur" aria-labelledby="titre-apropos">
+      <div class="bloc-apropos">
+        <div>
+          <h2 id="titre-apropos"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-feuille"/></svg>À propos d'AfriDélices</h2>
+          <p>AfriDélices est une plateforme dédiée à la cuisine africaine. Nous partageons avec vous des recettes authentiques, des astuces culinaires et des vidéos de démonstration pour vous aider à cuisiner facilement les plats de chez nous.</p>
+          <a class="bouton bouton-or" href="a-propos.html">En savoir plus <svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+        </div>
+        <div class="visuel-apropos">
+          <p class="slogan-script">Cuisine africaine, passion partagée !</p>
+          <div class="media">
+            <img src="assets/images/chef.webp" alt="Cheffe souriante en tenue blanche et tablier vert" width="600" height="800" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== PIED DE PAGE ========== -->
+  <footer class="pied">
+    <div class="conteneur pied-grille">
+      <div>
+        <a class="logo" href="index.html" aria-label="AfriDélices, retour à l'accueil">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M32 6c-4 0-7.300 2.200-8.800 5.400A10 10 0 0 0 16 29v3h32v-3a10 10 0 0 0-7.200-17.600C39.300 8.200 36 6 32 6z" fill="#ffffff"/>
+            <rect x="17" y="34" width="30" height="6" rx="2" fill="#ffffff"/>
+            <circle cx="32" cy="50" r="9" fill="#f5b800"/>
+          </svg>
+          <span class="logo-texte">
+            <span class="logo-nom">Afri<span>Délices</span></span>
+            <span class="logo-signature">Le goût de l'Afrique dans votre cuisine !</span>
+          </span>
+        </a>
+      </div>
+
+      <nav aria-label="Liens rapides">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="recettes.html">Recettes</a></li>
+          <li><a href="videos.html">Vidéos</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h3>Nos pays culinaires</h3>
+        <ul class="liste-pays liste-pays-colonnes">
+          <li><span class="drapeau d-tg" aria-hidden="true"></span><a href="recettes.html?pays=togo">Togo</a></li>
+          <li><span class="drapeau d-bj" aria-hidden="true"></span><a href="recettes.html?pays=benin">Bénin</a></li>
+          <li><span class="drapeau d-ci" aria-hidden="true"></span><a href="recettes.html?pays=cote-d-ivoire">Côte d'Ivoire</a></li>
+          <li><span class="drapeau d-ml" aria-hidden="true"></span><a href="recettes.html?pays=mali">Mali</a></li>
+          <li><span class="drapeau d-sn" aria-hidden="true"></span><a href="recettes.html?pays=senegal">Sénégal</a></li>
+          <li><span class="drapeau d-gh" aria-hidden="true"></span><a href="recettes.html?pays=ghana">Ghana</a></li>
+        </ul>
+      </div>
+
+      <!-- Réseaux sociaux : à ajouter ici quand les adresses officielles seront fournies. -->
+      <div>
+        <h3>Envie d'un nouveau plat ?</h3>
+        <p>Parcourez le catalogue et trouvez la recette idéale pour votre prochain repas.</p>
+        <a class="bouton bouton-or" href="recettes.html">Découvrir les recettes</a>
+      </div>
+    </div>
+    <div class="conteneur pied-bas">
+      <span>© 2026 AfriDélices. Tous droits réservés.</span>
+      <span>Cuisinons ensemble une Afrique plus gourmande !</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
