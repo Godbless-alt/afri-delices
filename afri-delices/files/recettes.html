@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recettes africaines – catalogue | AfriDélices</title>
+  <meta name="description" content="Catalogue de recettes africaines : cherchez par nom de plat ou ingrédient et filtrez par pays et catégorie.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317622c'/%3E%3Ctext x='32' y='43' font-size='34' text-anchor='middle' fill='%23f5b800' font-family='Arial' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Icônes réutilisables (sprite SVG) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-recherche" viewBox="0 0 24 24"><path d="M10 2a8 8 0 1 0 4.9 14.3l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+    <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M5.7 4.3 12 10.6l6.3-6.3 1.4 1.4-6.3 6.3 6.3 6.3-1.4 1.4-6.3-6.3-6.3 6.3-1.4-1.4 6.3-6.3-6.3-6.3z"/></symbol>
+    <symbol id="i-maison" viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></symbol>
+    <symbol id="i-horloge" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm-1 3v6l5 3 1-1.7-4-2.3V7z"/></symbol>
+    <symbol id="i-toque" viewBox="0 0 24 24"><path d="M12 2a4.5 4.5 0 0 0-4.2 2.9A4.5 4.5 0 0 0 5 13v1h14v-1a4.5 4.5 0 0 0-2.8-8.1A4.5 4.5 0 0 0 12 2zM6 16v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4z"/></symbol>
+    <symbol id="i-lecture" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+    <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M13 5l7 7-7 7-1.4-1.4 4.6-4.6H4v-2h12.2l-4.6-4.6z"/></symbol>
+    <symbol id="i-feuille" viewBox="0 0 24 24"><path d="M20 3C9 3 4 9 4 15c0 1.4.3 2.6.8 3.6C3.6 19.9 3 21 3 21h2.2c.4-.6 1-1.4 2-2 .9.3 1.8.4 2.8.4 6 0 11-5 10-16.4zM8 16c3-5 6-7 9-8-3 2-5 5-6 9z"/></symbol>
+  <symbol id="i-personnes" viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-3.300 0-7 1.700-7 4v3h14v-3c0-2.300-3.700-4-7-4zm8-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm.5 2.100c2.600.4 4.500 1.800 4.500 3.900v3h-4v-3c0-1.500-.2-2.800-.5-3.900z"/></symbol>
+  </svg>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- ========== EN-TÊTE ========== -->
+  <header class="entete">
+    <div class="conteneur entete-interieur">
+      <a class="logo" href="index.html" aria-label="AfriDélices, retour à l'accueil">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 6c-4 0-7.300 2.200-8.800 5.400A10 10 0 0 0 16 29v3h32v-3a10 10 0 0 0-7.200-17.600C39.300 8.200 36 6 32 6z" fill="#17622c"/>
+          <rect x="17" y="34" width="30" height="6" rx="2" fill="#17622c"/>
+          <circle cx="32" cy="50" r="9" fill="#f5b800" stroke="#17622c" stroke-width="3"/>
+          <path d="M32 44v6l4 2" stroke="#17622c" stroke-width="2.500" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-texte">
+          <span class="logo-nom">Afri<span>Délices</span></span>
+          <span class="logo-signature">Le goût de l'Afrique dans votre cuisine !</span>
+        </span>
+      </a>
+
+      <button class="bouton-menu" id="bouton-menu" type="button" aria-expanded="false" aria-controls="zone-menu" aria-label="Ouvrir le menu">
+        <svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <div class="zone-menu" id="zone-menu">
+        <nav class="nav-principale" aria-label="Navigation principale">
+          <ul>
+            <li><a href="index.html"><svg class="icone" aria-hidden="true"><use href="#i-maison"/></svg>Accueil</a></li>
+            <li><a href="recettes.html" aria-current="page">Recettes</a></li>
+            <li><a href="videos.html">Vidéos</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <form class="recherche" action="recettes.html" method="get" role="search">
+          <label class="sr-only" for="recherche-entete" style="position:absolute;left:-999px">Rechercher une recette</label>
+          <input id="recherche-entete" type="search" name="q" placeholder="Rechercher...">
+          <button type="submit" aria-label="Lancer la recherche"><svg class="icone" aria-hidden="true"><use href="#i-recherche"/></svg></button>
+        </form>
+
+        <a class="bouton bouton-vert" href="recettes.html">Explorer</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="bandeau-page" aria-labelledby="titre-page">
+      <div class="conteneur">
+        <h1 id="titre-page">Nos recettes</h1>
+        <p>Explorez une grande variété de recettes africaines, simples et délicieuses.</p>
+      </div>
+    </section>
+
+    <div class="conteneur">
+      <nav class="fil-ariane" aria-label="Fil d'Ariane">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li aria-current="page">Recettes</li>
+        </ol>
+      </nav>
+
+      <div class="catalogue">
+        <aside class="filtres" aria-label="Filtres">
+          <h2 class="filtres-titre">Filtres</h2>
+          <fieldset class="filtre">
+            <legend class="filtre-legende">Pays</legend>
+            <div class="filtre-liste" id="filtre-pays"></div>
+          </fieldset>
+          <fieldset class="filtre">
+            <legend class="filtre-legende">Catégorie</legend>
+            <div class="filtre-liste" id="filtre-categorie"></div>
+          </fieldset>
+          <button class="bouton bouton-contour" type="button" id="reinitialiser">Réinitialiser les filtres</button>
+        </aside>
+
+        <section aria-labelledby="titre-resultats">
+          <h2 class="sr-only" id="titre-resultats">Résultats</h2>
+          <form class="barre-recherche" id="form-recherche" role="search">
+            <label class="sr-only" for="champ-recherche">Rechercher un plat ou un ingrédient</label>
+            <input id="champ-recherche" type="search" name="q" placeholder="Rechercher un plat ou un ingrédient..." autocomplete="off">
+            <button type="submit" aria-label="Lancer la recherche"><svg class="icone" aria-hidden="true"><use href="#i-recherche"/></svg></button>
+          </form>
+
+          <p class="resultats-info" id="nb-resultats" aria-live="polite"></p>
+          <div class="grille-catalogue" id="liste-recettes"></div>
+          <div class="message-vide" id="message-vide" hidden>
+            <p><strong id="texte-vide"></strong></p>
+            <button class="bouton bouton-vert" type="button" id="reinitialiser-vide">Voir toutes les recettes</button>
+          </div>
+          <noscript><p class="message-vide">Le catalogue a besoin de JavaScript pour fonctionner. Vous pouvez toutefois ouvrir chaque recette directement : <a href="recette/fufu-sauce-graine.html">Fufu et sauce graine</a>, <a href="recette/attieke-poisson.html">Attiéké poisson</a>, <a href="recette/thieboudienne.html">Thiéboudienne</a>.</p></noscript>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== PIED DE PAGE ========== -->
+  <footer class="pied">
+    <div class="conteneur pied-grille">
+      <div>
+        <a class="logo" href="index.html" aria-label="AfriDélices, retour à l'accueil">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M32 6c-4 0-7.300 2.200-8.800 5.400A10 10 0 0 0 16 29v3h32v-3a10 10 0 0 0-7.200-17.600C39.300 8.200 36 6 32 6z" fill="#ffffff"/>
+            <rect x="17" y="34" width="30" height="6" rx="2" fill="#ffffff"/>
+            <circle cx="32" cy="50" r="9" fill="#f5b800"/>
+          </svg>
+          <span class="logo-texte">
+            <span class="logo-nom">Afri<span>Délices</span></span>
+            <span class="logo-signature">Le goût de l'Afrique dans votre cuisine !</span>
+          </span>
+        </a>
+      </div>
+
+      <nav aria-label="Liens rapides">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="recettes.html">Recettes</a></li>
+          <li><a href="videos.html">Vidéos</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h3>Nos pays culinaires</h3>
+        <ul class="liste-pays liste-pays-colonnes">
+          <li><span class="drapeau d-tg" aria-hidden="true"></span><a href="recettes.html?pays=togo">Togo</a></li>
+          <li><span class="drapeau d-bj" aria-hidden="true"></span><a href="recettes.html?pays=benin">Bénin</a></li>
+          <li><span class="drapeau d-ci" aria-hidden="true"></span><a href="recettes.html?pays=cote-d-ivoire">Côte d'Ivoire</a></li>
+          <li><span class="drapeau d-ml" aria-hidden="true"></span><a href="recettes.html?pays=mali">Mali</a></li>
+          <li><span class="drapeau d-sn" aria-hidden="true"></span><a href="recettes.html?pays=senegal">Sénégal</a></li>
+          <li><span class="drapeau d-gh" aria-hidden="true"></span><a href="recettes.html?pays=ghana">Ghana</a></li>
+        </ul>
+      </div>
+
+      <!-- Réseaux sociaux : à ajouter ici quand les adresses officielles seront fournies. -->
+      <div>
+        <h3>Envie d'un nouveau plat ?</h3>
+        <p>Parcourez le catalogue et trouvez la recette idéale pour votre prochain repas.</p>
+        <a class="bouton bouton-or" href="recettes.html">Découvrir les recettes</a>
+      </div>
+    </div>
+    <div class="conteneur pied-bas">
+      <span>© 2026 AfriDélices. Tous droits réservés.</span>
+      <span>Cuisinons ensemble une Afrique plus gourmande !</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/recettes.js" defer></script>
+</body>
+</html>

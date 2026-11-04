@@ -8,7 +8,7 @@ Bannière d'accueil
   hero-plat.webp                 1200 x 900 px   (grand plat appétissant)
 
 Cartes de recettes (format 4:3)
-  fufu-sauce-graine.webp         800 x 600 px
+  fufu-sauce-graine.webp         800 x 600 px file:///C:/Users/Blessing/Downloads/Capture%20d%E2%80%99%C3%A9cran%202026-03-23%20131037.webp
   attieke-poisson.webp           800 x 600 px
   thieboudienne.webp             800 x 600 px
   riz-au-gras.webp               800 x 600 px
@@ -24,3 +24,4 @@ Bloc « À propos »
 
 Tant qu'une image est absente, la page affiche un dégradé chaud à sa place
 (pas d'icône cassée). Pensez à alléger les images (moins de 200 Ko chacune).
+
