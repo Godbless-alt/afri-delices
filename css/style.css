@@ -312,3 +312,24 @@ h1, h2, h3, p { margin-top: 0; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+
+/* Vidéos intégrées */
+.video-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px 8px 0 0;
+}
+
+.video-media iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
+
+.grille-videos .carte-video {
+    min-width: 0;
+}
