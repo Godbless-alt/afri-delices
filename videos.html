@@ -1,3 +1,57 @@
+
+<!-- Icônes du site -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-recherche" viewBox="0 0 24 24"><path d="M10 2a8 8 0 1 0 4.9 14.3l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+    <symbol id="i-maison" viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></symbol>
+</svg>
+
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+    <div class="conteneur entete-interieur">
+        <a class="logo" href="index.html">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 6c-4 0-7.3 2.2-8.8 5.4A10 10 0 0 0 16 29v3h32v-3a10 10 0 0 0-7.2-17.6C39.3 8.2 36 6 32 6z" fill="#17622c"/>
+                <rect x="17" y="34" width="30" height="6" rx="2" fill="#17622c"/>
+                <circle cx="32" cy="50" r="9" fill="#f5b800" stroke="#17622c" stroke-width="3"/>
+            </svg>
+            <span class="logo-texte">
+                <span class="logo-nom">Afri<span>Délices</span></span>
+                <span class="logo-signature">Le goût de l'Afrique dans votre cuisine !</span>
+            </span>
+        </a>
+
+        <button class="bouton-menu" id="bouton-menu" type="button"
+            aria-expanded="false" aria-controls="zone-menu" aria-label="Ouvrir le menu">
+            <svg class="icone"><use href="#i-menu"/></svg>
+        </button>
+
+        <div class="zone-menu" id="zone-menu">
+            <nav class="nav-principale" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="index.html"><svg class="icone"><use href="#i-maison"/></svg>Accueil</a></li>
+                    <li><a href="recettes.html">Recettes</a></li>
+                    <li><a href="videos.html" aria-current="page">Vidéos</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <form class="recherche" action="recettes.html" method="get" role="search">
+                <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher une recette">
+                <button type="submit" aria-label="Rechercher">
+                    <svg class="icone"><use href="#i-recherche"/></svg>
+                </button>
+            </form>
+
+            <a class="bouton bouton-vert" href="recettes.html">Explorer</a>
+        </div>
+    </div>
+</header>
+
+<main id="contenu">
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/pages.css">
 <section class="section">
@@ -55,3 +109,57 @@
         </div>
     </div>
 </section>
+
+
+</main>
+
+<footer class="pied">
+    <div class="conteneur pied-grille">
+        <div>
+            <a class="logo" href="index.html">
+                <span class="logo-texte">
+                    <span class="logo-nom">Afri<span>Délices</span></span>
+                    <span class="logo-signature">Le goût de l'Afrique dans votre cuisine !</span>
+                </span>
+            </a>
+        </div>
+
+        <nav aria-label="Liens rapides">
+            <h3>Liens rapides</h3>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recettes.html">Recettes</a></li>
+                <li><a href="videos.html">Vidéos</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <h3>Nos pays culinaires</h3>
+            <ul>
+                <li><a href="recettes.html?pays=togo">Togo</a></li>
+                <li><a href="recettes.html?pays=benin">Bénin</a></li>
+                <li><a href="recettes.html?pays=cote-d-ivoire">Côte d'Ivoire</a></li>
+                <li><a href="recettes.html?pays=mali">Mali</a></li>
+                <li><a href="recettes.html?pays=senegal">Sénégal</a></li>
+                <li><a href="recettes.html?pays=ghana">Ghana</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Envie d'un nouveau plat ?</h3>
+            <p>Parcourez le catalogue et trouvez la recette idéale pour votre prochain repas.</p>
+            <a class="bouton bouton-or" href="recettes.html">Découvrir les recettes</a>
+        </div>
+    </div>
+
+    <div class="conteneur pied-bas">
+        <span>© 2026 AfriDélices. Tous droits réservés.</span>
+        <span>Cuisinons ensemble une Afrique plus gourmande !</span>
+    </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
